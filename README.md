@@ -1,12 +1,12 @@
 # <h1> LoRa Tani</h1>
-fiture:
+<h3>Fiture:</h3>
 * LoRa sx1276 100mA
 * SD card
 * SIM7600CE
 * RTC DS3231
 * Oled Device
 
-library support
+</h3>library support: </h3>
 1. https://github.com/vshymanskyy/TinyGSM
 2. https://github.com/adafruit/RTClib
 3. https://github.com/sandeepmistry/arduino-LoRa
