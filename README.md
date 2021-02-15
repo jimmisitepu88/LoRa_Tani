@@ -6,7 +6,7 @@
 * RTC DS3231
 * Oled Device
 
-</b>library support: </b>
+<b>library support: </b>
 1. https://github.com/vshymanskyy/TinyGSM
 2. https://github.com/adafruit/RTClib
 3. https://github.com/sandeepmistry/arduino-LoRa
