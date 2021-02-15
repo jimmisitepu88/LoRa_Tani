@@ -37,35 +37,19 @@ void loop() {
   //Serial.println("bismillaah");
 }
 
-// function that executes whenever data is requested by master
-// this function is registered as an event, see setup()
 void requestEvent() {
-
     switch(count_request){
       case 0:
         count_request = 1;
         Wire.write(char_payload1);
-        //Serial.println("kirim 0");
+        //Serial.println(char_payload1);
       break;
       case 1:
         count_request = 0;
         Wire.write(char_payload2);
-        //Serial.println("kirim 1");
+        //Serial.println(char_payload2);
       break; 
     }
-    
-   /*if(count_request == 0){
-    Wire.print(char_payload1); 
-    count_request = 1;
-  }
-  if(count_request == 1){
-    Wire.print(char_payload2); 
-    count_request = 0;
-  }
-  
-  */
-  // respond with message of 6 bytes
-  // as expected by master
 }
 
 
@@ -81,7 +65,7 @@ void baca_adc(){
 
 void build_json(){
   String payload;
-  
+  doc1["s"] = 0;
   doc1["a"] = dt_adc0;
   doc1["b"] = dt_adc1;
   doc1["c"] = dt_adc2;
@@ -89,7 +73,9 @@ void build_json(){
   str_payload = payload;
   str_payload.toCharArray(char_payload1, str_payload.length()+1);
   str_payload = "";payload = "";
+
   
+  doc2["s"] = 1;
   doc2["d"] = dt_adc3;
   doc2["e"] = dt_adc6;
   doc2["f"] = dt_adc7;
