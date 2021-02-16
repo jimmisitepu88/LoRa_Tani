@@ -6,6 +6,7 @@ char chr_i2c[33];
 int jml_i2c;
 
 int adc0, adc1, adc2, adc3, adc6, adc7;
+int dt_sensor1, dt_sensor2, dt_sensor3, dt_sensor4;
 int count_request = 0;
 int sts = 0;
 
@@ -18,7 +19,7 @@ void setup() {
 
 void loop() {
   request_i2c();
-  delay(50);
+  delay(100);
 }
 
 void request_i2c() {
@@ -55,6 +56,19 @@ void request_i2c() {
       Serial.print("adc3: ");Serial.print(adc3); Serial.print(",");
       Serial.print("adc6: ");Serial.print(adc6); Serial.print(",");
       Serial.print("adc7: ");Serial.print(adc7); Serial.println();
+      break;
+
+    case 2:
+      dt_sensor1 = doc["g"];
+      dt_sensor2 = doc["h"];
+      dt_sensor3 = doc["i"];
+      dt_sensor4 = doc["j"];
+      
+      Serial.print("s1: ");Serial.print(dt_sensor1); Serial.print(",");
+      Serial.print("s2: ");Serial.print(dt_sensor2); Serial.print(",");
+      Serial.print("s3: ");Serial.print(dt_sensor3); Serial.print(",");
+      Serial.print("s4: ");Serial.print(dt_sensor4); Serial.println();
+      
       break;
   }
 
