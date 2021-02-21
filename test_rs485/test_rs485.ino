@@ -43,8 +43,6 @@ void baca_rs485(uint8_t wkt) {
     Serial.println(tempdouble);
     tempdouble = node.getResponseBuffer(5);
     Serial.println(tempdouble);
-    tempdouble = node.getResponseBuffer(6);
-    Serial.println(tempdouble);
   }
   else {
     Serial.println("failed1");
